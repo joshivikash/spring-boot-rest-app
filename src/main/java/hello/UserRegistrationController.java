@@ -78,12 +78,12 @@ public class UserRegistrationController {
 
 			Session session = Session.getInstance(mailProperties, new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("joshi.vikash17", "VikashCisco@123");
+					return new PasswordAuthentication("", "");
 				}
 			});
 			try {
 				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("joshi.vikash17@gmail.com"));
+				message.setFrom(new InternetAddress(""));
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(user.getEmail()));
 				message.setSubject("User Login Link");
 				message.setText("http://localhost:8080/getUserDetails?userId=" + userId + "&token=" + time);
